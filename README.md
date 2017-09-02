@@ -1,9 +1,9 @@
 # Origin-of-Replication-Finder
-Bioinformatic Algorithm to Find the Origin of Replication on Bacterial Genomes
+A Bioinformatic Algorithm to Find the Origin of Replication on Bacterial Genomes
 
-It relies on the fact on the biomechanics of bacterial division, where GC-skew reaches a minimum around the origin of replication. It scans for consensus sequences around this area of the genome.
+Because of the mechanics of bacterial division, GC-skew reaches a minimum around the origin of replication. This algorithm scans for consensus sequences around this region.
 
-This can be run from the terminal like so as 'python main.py -f Genome_E_coli.fas -m 1 -k 9 -w 1000'. An example E coli genome can be found here: https://www.genome.wisc.edu/sequencing/updating.htm
+An example E coli genome can be found here: https://www.genome.wisc.edu/sequencing/updating.htm. This can be run from the terminal like so as 'python main.py -f Genome_E_coli.fas -m 1 -k 9 -w 1000'.
 
 Where:
 -f is the path to the genome fasta file
