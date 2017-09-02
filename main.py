@@ -82,10 +82,10 @@ def num_approx_matches(_in, _of, max_mismatches_allowed):
     occurrences = regex.findall(search_expression, _in)
     return len(occurrences)
 
-
 def main(max_mismatches_allowed, window_length, k, genome_file):
     with open(genome_file, 'r') as f:
-        genome = f.read()
+
+        genome = ''.join(line.strip().upper() for line in f if not line.startswith('>'))
 
         df = DataFrame({'Nucleotide': [n for n in genome],
                         'Delta_Skew': [nucleotide_to_delta_skew[n] for n in genome]})
@@ -96,7 +96,8 @@ def main(max_mismatches_allowed, window_length, k, genome_file):
 
         for m in minimum_skew_locations:
             print('Calculating frequent 9-mers around location {}:'.format(m + 1))
-            window = genome[m - (window_length / 2):m + (window_length / 2)]
+
+            window = genome[int(m - window_length / 2):int(m + (window_length / 2))]
 
             possible_kmers = set([])
 
