@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-from oriC_Finder import main
+from main import main
 from optparse import OptionParser
 
 if __name__ == '__main__':
