@@ -116,7 +116,7 @@ def most_frequent_kmers(_sequence, _k_mer_length, _max_mismatches):
     
     return number_of_top_hits, top_hits
     
-## SUPPORT CODE -- USEFUL METHODS THAT ARE NOT CRITICAL FOR THE IMPLEMENTATION ##
+## SUPPORT CODE -- USEFUL FUNCTIONS THAT ARE NOT CRITICAL FOR THE IMPLEMENTATION ##
 
 class Subsequences:
     '''
