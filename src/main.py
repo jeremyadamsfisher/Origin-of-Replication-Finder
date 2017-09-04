@@ -1,22 +1,24 @@
-from functions import *
+#! /usr/bin/python
 
-def main(max_mismatches_allowed, window_length, k_mer_length, genome_file):
-    
-    with open(genome_file, 'r') as f:
+from oriC_Finder import main
+from optparse import OptionParser
 
-        # Read genome, typically as a FASTA file
-        genome = ''.join(line.strip().upper() for line in f if not line.startswith('>'))
-        
-        # Calculate the absolute minimum skew locations
-        for min_skew_loc in minimum_skew_locations(genome):
-            
-            # Search for the polymers with the greatest number of (aproximate) matches
-            # within a window centered around this minimum skew location
-            window = window_centered_around(min_skew_loc, window_length, genome)
-            number_of_top_hits, top_hits = most_frequent_kmers(window, k_mer_length, max_mismatches_allowed):
+if __name__ == '__main__':
+    parser = OptionParser()
+    parser.add_option('-f', '--file', dest='genome_file',
+                      help='Path to the genome file', metavar='FILE')
+    parser.add_option('-k', '--kmer-length', dest='kmer_length',
+                      help='Length of the consensus desired', metavar='KMER')
+    parser.add_option('-m', '--mismatches-allowed', dest='num_mismatches',
+                      help='The number of mutations allowed in the consensus sequence', metavar='MIS')
+    parser.add_option('-w', '--window-length', dest='win_len',
+                      help='Length of the window around the origin of replication to search for consensus sequences', metavar='WIN')
 
-            # Print the number of hits and the relevant polymer to the console
-            if(number_of_top_hits > 0):
-                print('Found the following polymers centered around {}:'.format(min_skew_loc))
-                for hit in top_hits:
-                    print('\t* {} [{} hits]'.format(hit, number_of_top_hits))
+    (options, args) = parser.parse_args()
+
+    num_mismatches = int(options.num_mismatches)
+    win_len = int(options.win_len)
+    kmer_length = int(options.kmer_length)
+    genome_file = options.genome_file
+
+    main(num_mismatches, win_len, kmer_length, genome_file)
