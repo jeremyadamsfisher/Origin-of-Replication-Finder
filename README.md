@@ -3,7 +3,7 @@ A Bioinformatic Algorithm to Find the Origin of Replication on Bacterial Genomes
 
 Because of the mechanics of bacterial division, GC-skew reaches a minimum around the origin of replication. This algorithm scans for consensus sequences around this region.
 
-An example E coli genome can be found here: https://www.genome.wisc.edu/sequencing/updating.htm. This can be run from the terminal like so as 'python main.py -f E_coli_genome.fas -m 1 -k 9 -w 1000'.
+An example E coli genome can be found here: https://www.genome.wisc.edu/sequencing/updating.htm. This can be run from the terminal like so as './main.py -f E_coli_genome.fas -m 1 -k 9 -w 1000'.
 
 Where:
 * f is the path to the genome fasta file
