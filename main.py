@@ -8,8 +8,8 @@ def main(max_mismatches_allowed, window_length, k_mer_length, genome_file):
     
     with open(genome_file, 'r') as f:
 
-        # Read genome, typically as a FASTA file
-        genome = ''.join(line.strip().upper() for line in f if not line.startswith('>'))
+        # Read genome as a FASTA file
+        genome = read_fasta(f)
         
         # Calculate the absolute minimum skew locations
         for min_skew_loc in minimum_skew_locations(genome):
@@ -27,6 +27,9 @@ def main(max_mismatches_allowed, window_length, k_mer_length, genome_file):
                     
                     
 ## CRITICAL CODE -- CRUCIAL METHODS FOR THE IMPLEMENTATION OF THE ORIC FINDER ALGORITHM ##
+
+def read_fasta(_genome_file):
+    return ''.join(line.strip().upper() for line in f if not line.startswith('>'))
 
 def minimum_skew_locations(_genome):
     '''
