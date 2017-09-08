@@ -39,11 +39,10 @@ def minimum_skew_locations(_genome):
     
     nucleotide_to_delta_skew = {'A': 0, 'C': -1, 'T': 0, 'G': 1, 'N': 0}
     
-    df = DataFrame({'Nucleotide': [n for n in _genome],
-                    'Delta_Skew': [nucleotide_to_delta_skew[n] for n in _genome]})
+    df = DataFrame({'Delta_Skew': [nucleotide_to_delta_skew[n] for n in _genome]})
     df['Skew'] = df['Delta_Skew'].cumsum()
     minimum_skew = df['Skew'].min()
-    minimum_skew_locations = [int(l) for l in df[df['Skew'] == minimum_skew].index if df.loc[l]['Nucleotide'] == 'C']
+    minimum_skew_locations = [int(l) for l in df[df['Skew'] == minimum_skew].index if df.loc[l]['Delta_Skew'] == '-1']
     
     return minimum_skew_locations
 
