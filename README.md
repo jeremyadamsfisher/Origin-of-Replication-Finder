@@ -5,7 +5,7 @@ Because of the molecular mechanics of bacterial division, GC-skew reaches a mini
 
 An example E coli genome can be found here: https://www.genome.wisc.edu/sequencing/updating.htm. This can be run from the terminal like so:
 ~~~~shell
-./oriC_Finder.py -f E_coli_genome.fas -m 1 -k 9 -w 1000'.
+./oriC_Finder.py -f E_coli_genome.fas -m 1 -k 9 -w 1000
 ~~~~
 
 Where:
