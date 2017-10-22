@@ -14,7 +14,7 @@ Where:
  - *k* is the length of the consensus sequence
  - *w* is the length of the genome scanned near a GC-skew minimum
 
-This algorithm requires the *regex* module, which can be obtain by executing in the terminal:
+This algorithm requires the *regex* module, which can be obtained by executing the following in the terminal:
 ~~~~shell
 pip install regex
 ~~~~
