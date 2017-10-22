@@ -16,6 +16,6 @@ Where:
 
 This algorithm requires the *regex* module, which can be obtain by executing in the terminal:
 ~~~~shell
-pip install regex'
+pip install regex
 ~~~~
 
