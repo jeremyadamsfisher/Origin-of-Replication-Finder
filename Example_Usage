@@ -1,7 +1,0 @@
-#!/bin/bash
-
-curl  https://www.genome.wisc.edu/pub/sequence/U00096.2.fas > E_coli_genome.fas
-
-echo "Running the oriC Finder Algorithm..."
-
-./oriC_Finder.py -f E_coli_genome.fas -m 1 -k 9 -w 1000
