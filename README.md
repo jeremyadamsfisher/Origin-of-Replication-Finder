@@ -1,4 +1,4 @@
-# Origin-of-Replication-Finder
+# Origin of Replication Finder
 ### A Bioinformatic Algorithm to Find the Origin of Replication on Bacterial Genomes
 
 Because of the molecular mechanics of bacterial division, GC-skew reaches a minimum around the origin of replication. This algorithm scans for consensus sequences around this region.
