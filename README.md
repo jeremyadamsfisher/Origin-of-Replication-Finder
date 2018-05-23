@@ -12,9 +12,3 @@ There are several settings that can be tweaked in the Jupyter notebook to modify
  - *max_mismatches_allowed* is the maximum number of mismatches that are allowed when determining a consensus sequence 
  - *k_mer_length* is the length of the consensus sequence
  - *window_length* is the length of the genome scanned near a GC-skew minimum
-
-This algorithm requires the *regex* module, which can be obtained by executing the following in the terminal:
-~~~~shell
-pip install regex
-~~~~
-
